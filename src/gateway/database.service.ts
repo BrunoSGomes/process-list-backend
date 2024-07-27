@@ -3,7 +3,7 @@ import {
   Process,
   ProcessHistory,
   ProcessHistoryKey,
-  ProcessKey,
+  ProcessKey
 } from '../usecases/process/process.interface'
 
 export class DatabaseService {

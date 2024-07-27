@@ -4,7 +4,7 @@ import cors from 'cors'
 import * as processController from '../usecases/process/process.controller'
 import {
   validateGetHistory,
-  validateSearch,
+  validateSearch
 } from '../usecases/process/process.dto'
 import { handleError } from '../middleware/handle-error.middleware'
 

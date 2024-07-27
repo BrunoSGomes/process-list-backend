@@ -6,9 +6,9 @@ const ajv = new Ajv()
 const searchSchema = {
   type: 'object',
   properties: {
-    name: { type: 'string' },
+    name: { type: 'string' }
   },
-  additionalProperties: false,
+  additionalProperties: false
 }
 
 export const validateSearch = (): RequestHandler => {
@@ -25,10 +25,10 @@ export const validateSearch = (): RequestHandler => {
 const getHistorySchema = {
   type: 'object',
   properties: {
-    id: { type: 'string' },
+    id: { type: 'string' }
   },
   required: ['id'],
-  additionalProperties: false,
+  additionalProperties: false
 }
 
 export const validateGetHistory = (): RequestHandler => {
