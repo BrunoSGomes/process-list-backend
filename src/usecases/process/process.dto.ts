@@ -8,20 +8,17 @@ const searchSchema = {
   properties: {
     name: { type: 'string' },
   },
+  additionalProperties: false,
 }
 
-export function validateSearch(): RequestHandler {
+export const validateSearch = (): RequestHandler => {
   return (req, res, next) => {
-    if (!req.query) {
-      next()
-    }
-
     const valid = ajv.validate(searchSchema, req.query)
     if (!valid) {
       return res.status(400).send({ errors: ajv.errorsText() })
     }
 
-    next()
+    return next()
   }
 }
 
@@ -31,15 +28,16 @@ const getHistorySchema = {
     id: { type: 'string' },
   },
   required: ['id'],
+  additionalProperties: false,
 }
 
-export function validateGetHistory(): RequestHandler {
+export const validateGetHistory = (): RequestHandler => {
   return (req, res, next) => {
     const valid = ajv.validate(getHistorySchema, req.params)
     if (!valid) {
       return res.status(400).send({ errors: ajv.errorsText() })
     }
 
-    next()
+    return next()
   }
 }

@@ -1,20 +1,31 @@
-import { Request, Response } from 'express'
+import { Request, Response, NextFunction } from 'express'
 import { ProcessService } from './process.service'
+import { DatabaseService } from '../../gateway/database.service'
 
-const processService = new ProcessService()
+const processService = new ProcessService(new DatabaseService())
 
 export const processList = async (
-  req: Request,
-  res: Response
+  req: Request<any, any, any, { name?: string }>,
+  res: Response,
+  next: NextFunction
 ): Promise<void> => {
-  const response = await processService.processList('test')
-  res.status(200).send(response)
+  try {
+    const response = await processService.processList(req.query.name)
+    res.status(200).send(response)
+  } catch (error) {
+    next(error)
+  }
 }
 
 export const getProcessHistory = async (
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ): Promise<void> => {
-  const response = await processService.getProcessHistory('test')
-  res.status(200).send(response)
+  try {
+    const response = await processService.getProcessHistory(req.params.id)
+    res.status(200).send(response)
+  } catch (error) {
+    next(error)
+  }
 }

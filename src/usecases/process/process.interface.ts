@@ -7,6 +7,8 @@ export interface Process {
   finishedAt: string
 }
 
+export type ProcessKey = keyof Process
+
 export interface ProcessHistory {
   id: string
   processId: string
@@ -17,3 +19,5 @@ interface History {
   createdAt: string
   description: string
 }
+
+export type ProcessHistoryKey = keyof ProcessHistory

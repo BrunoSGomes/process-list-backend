@@ -6,6 +6,7 @@ import {
   validateGetHistory,
   validateSearch,
 } from '../usecases/process/process.dto'
+import { handleError } from '../middleware/handle-error.middleware'
 
 dotenv.config()
 
@@ -19,5 +20,6 @@ app.get(
   validateGetHistory(),
   processController.getProcessHistory
 )
+app.use(handleError())
 
 export default app
