@@ -7,7 +7,7 @@ import {
 } from '../usecases/process/process.interface'
 
 export class DatabaseService {
-  private async readData<T>(collection: string): Promise<T[]> {
+  protected async readData<T>(collection: string): Promise<T[]> {
     try {
       const result = await fs.readFile(`database/${collection}.json`, 'utf8')
       return JSON.parse(result)

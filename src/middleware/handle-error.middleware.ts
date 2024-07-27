@@ -2,7 +2,7 @@ import { ErrorRequestHandler } from 'express'
 import { HttpException } from '../common/exception/http.exception'
 
 export const handleError = (): ErrorRequestHandler => {
-  return (err, req, res) => {
+  return (err, req, res, next) => {
     if (err instanceof HttpException) {
       const httpError = err as HttpException
       return res

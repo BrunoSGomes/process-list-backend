@@ -8,8 +8,8 @@
     "start:dev": "nodemon --legacy-watch src/main.ts",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "test:unit": "echo \"Error: no test specified\" && exit 1",
-    "test:integration": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "jest test/unit --runInBand",
+    "test:integration": "jest test/integration --runInBand"
   },
   "author": "Bruno Gomes",
   "dependencies": {
@@ -33,6 +33,7 @@
     "nodemon": "^3.1.4",
     "prettier": "^3.0.0",
     "supertest": "^7.0.0",
+    "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
