@@ -15,7 +15,7 @@ export class ProcessService {
 
   public async getProcessHistory(id: string): Promise<ProcessHistory> {
     const response = await this.databaseService.getProcessHistoryByParam(
-      'id',
+      'processId',
       id
     )
 

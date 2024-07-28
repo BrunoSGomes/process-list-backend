@@ -36,7 +36,10 @@ describe('ProcessService tests', () => {
       getProcessHistoryByParamSpy.mockResolvedValueOnce({})
 
       expect(sut.getProcessHistory('test')).resolves.toEqual({})
-      expect(getProcessHistoryByParamSpy).toHaveBeenCalledWith('id', 'test')
+      expect(getProcessHistoryByParamSpy).toHaveBeenCalledWith(
+        'processId',
+        'test'
+      )
     })
 
     it('Should throw an error because a process with that id could not be found', () => {
@@ -48,7 +51,10 @@ describe('ProcessService tests', () => {
           'It was not possible to find a process with this id.'
         )
       )
-      expect(getProcessHistoryByParamSpy).toHaveBeenCalledWith('id', 'test')
+      expect(getProcessHistoryByParamSpy).toHaveBeenCalledWith(
+        'processId',
+        'test'
+      )
     })
   })
 })

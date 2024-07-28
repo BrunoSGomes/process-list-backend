@@ -30,13 +30,13 @@ describe('Process tests', () => {
   describe('GET /get-process-history/:id', () => {
     it('Should return the history of a process', async () => {
       const response = await request(app).get(
-        '/get-process-history/63e6bbd3fd58d83a623bc070'
+        '/get-process-history/6686e90f2ba8180008ccb691'
       )
 
       expect(response.status).toEqual(200)
       expect(response.body).toEqual(
         (await databaseMock<ProcessHistory>('timeline')).find(
-          (timeline) => timeline.id === '63e6bbd3fd58d83a623bc070'
+          (timeline) => timeline.processId === '6686e90f2ba8180008ccb691'
         )
       )
     })
