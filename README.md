@@ -25,6 +25,12 @@ Primeiramente crie um arquivo .env na raiz do projeto com a porta PORT=3000
 
 # Como rodar os testes
 
+Antes de rodar os testes do backend é necessário instalar as dependências localmente.
+
+```bash
+  npm i
+```
+
 - Testes unitários:
 
   Para rodar os testes unitários basta rodar o seguinte comando
