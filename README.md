@@ -1,4 +1,4 @@
-# Aprova Backend
+# Documentação
 
 Backend com endpoint de listagem de processos e endpoint para buscar o histórico de um processo.
 
